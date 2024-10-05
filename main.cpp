@@ -1,4 +1,7 @@
-﻿#include<iostream>
+﻿// Copyright (C) 2024 BlazeSnow
+// 保留所有权利
+// 本程序以GNU General Public License v3.0的条款发布
+#include<iostream>
 #include<fstream>
 #include<cstdlib>
 #include<filesystem>
@@ -84,6 +87,12 @@ void decode(const char* a, int number) {
 }
 
 int main() {
+	system("chcp 54936");
+	cout << "Copyright (C) 2024 BlazeSnow.保留所有权利。" << endl;
+	cout << "本程序以GNU General Public License v3.0的条款发布。" << endl;
+	cout << "当前程序版本号：v1.0.0" << endl;
+	cout << "https://github.com/BlazeSnow/Custom-interchange-password" << endl
+		<< endl;
 	//first_use字符变量用于判断是否创建自定义密码文件
 	char first_use = '0';
 	cout << "是否创建自定义密码文件?" << endl;
