@@ -113,7 +113,8 @@ int main() {
 		//文件创建失败,报错abort
 		else {
 			cout << "ERROR:创建文件失败" << endl;
-			abort();
+			system("pause");
+			exit(1);
 		}
 	}
 	//first_use变量等于'0'时读取自定义密码文件
@@ -134,7 +135,8 @@ int main() {
 		//文件读取失败,报错abort
 		else {
 			cout << "ERROR:读取密码文件失败" << endl;
-			abort();
+			system("pause");
+			exit(1);
 		}
 		//处理的字符串长度100
 		int number = 100;
@@ -142,7 +144,8 @@ int main() {
 		//calloc创建检查,失败报错abort
 		if (!a) {
 			cout << "ERROR:calloc" << endl;
-			abort();
+			system("pause");
+			exit(1);
 		}
 		//输入需要处理的内容
 		cout << "请输入需要编码或解码的内容:" << endl;
@@ -162,13 +165,16 @@ int main() {
 		cout << endl;
 		cout << "解码结果为:" << endl;
 		decode(a, number);
+		cout << endl;
 		//calloc收尾
 		free(a);
 	}
 	//first_use变量等于其他字符时,报错abort
 	else {
 		cout << "ERROR:检测到非法字符" << endl;
-		abort();
+		system("pause");
+		exit(1);
 	}
+	system("pause");
 	return 0;
 }
