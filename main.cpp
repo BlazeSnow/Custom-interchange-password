@@ -91,10 +91,11 @@ int main() {
       cout << "创建密码文件成功" << endl;
       // 打印文件路径,path变量用于存储路径
       std::filesystem::path path = std::filesystem::current_path();
-      cout << "密码文件路径:" << path << endl;
-      cout << "密码文件名称:自定义密码文件.csv" << endl;
+      cout << "密码文件路径: " << path << endl;
+      cout << "密码文件名称: Custom-interchange-password.csv" << endl;
       cout << "可用表格处理软件Excel处理该文件" << endl;
       cout << "该表格的左列为源码,右列为密码" << endl;
+      system("pause");
       return 0;
     }
     // 文件创建失败,报错abort
