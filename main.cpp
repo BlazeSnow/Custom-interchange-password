@@ -81,7 +81,7 @@ int main() {
   // first_use变量等于'1'时创建自定义密码文件
   if (first_use == '1') {
     // 创建自定义密码文件
-    fstream file("自定义密码文件.csv", ios_base::out);
+    fstream file("Custom-interchange-password.csv", ios_base::out);
     // 如果文件创建成功
     if (file.is_open()) {
       for (auto &i : source) {
@@ -107,7 +107,7 @@ int main() {
   // first_use变量等于'0'时读取自定义密码文件
   else if (first_use == '0') {
     // 读取密码文件
-    fstream file("自定义密码文件.csv", ios_base::in);
+    fstream file("Custom-interchange-password.csv", ios_base::in);
     // 文件读取成功
     if (file.is_open()) {
       // 把密码文件覆写到source结构体
