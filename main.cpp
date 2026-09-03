@@ -36,7 +36,6 @@ void enterToContinue() {
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {
     }
-    getchar();
 }
 
 // 编码密码
@@ -99,6 +98,10 @@ int main() {
     printf("0\t仅读取自定义密码文件\n");
     printf("请输入:\n");
     scanf(" %c", &first_use);
+    // 清空菜单输入行在缓冲区中的残留
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF) {
+    }
     // first_use变量等于'1'时创建自定义密码文件
     if (first_use == '1') {
         // 创建自定义密码文件
@@ -158,10 +161,6 @@ int main() {
         }
         // 输入需要处理的内容
         printf("请输入需要编码或解码的内容:\n");
-        // 清空输入缓冲区中残留的回车符
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF) {
-        }
         for (int i = 0; i < number; i++) {
             *(a + i) = (char) getchar();
             // 检测到回车时结束输入
