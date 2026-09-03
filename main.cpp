@@ -13,8 +13,8 @@ using namespace std;
 
 // 程序自带的密码库
 struct code {
-    char sourceCode;
-    char code;
+    char sourceCode; //原字符
+    char desCode; //混淆后字符
 };
 
 struct code source[NumberOfLetterSupported] = {
@@ -46,7 +46,7 @@ void encode(const char *a, int number) {
         for (auto &j: source) {
             // 在密码库结构体中找到原文并打印密码
             if (j.sourceCode == *(a + i)) {
-                printf("%c", j.code);
+                printf("%c", j.desCode);
                 break;
             }
             // 找不到原文
@@ -67,7 +67,7 @@ void decode(const char *a, int number) {
         int find = 0;
         for (auto &j: source) {
             // 在密码库结构体中找到密码并打印原文
-            if (j.code == *(a + i)) {
+            if (j.desCode == *(a + i)) {
                 printf("%c", j.sourceCode);
                 break;
             }
@@ -91,8 +91,7 @@ int main() {
 
     clearConsole();
     printf("Copyright (C) 2024-2026 BlazeSnow. 保留所有权利。\n");
-    printf("当前程序版本号：v1.0.2\n");
-    printf("https://github.com/BlazeSnow/CppWorkspace\n\n");
+    printf("https://github.com/BlazeSnow/Custom-interchange-password\n\n");
     // first_use字符变量用于判断是否创建自定义密码文件
     char first_use = '0';
     printf("是否创建自定义密码文件?\n");
@@ -107,7 +106,7 @@ int main() {
         // 如果文件创建成功
         if (file.is_open()) {
             for (auto &i: source) {
-                file << i.sourceCode << ',' << i.code << endl;
+                file << i.sourceCode << ',' << i.desCode << endl;
             }
             file.close();
             printf("创建密码文件成功\n");
@@ -138,7 +137,7 @@ int main() {
                 char temp;
                 file >> i.sourceCode;
                 file >> temp;
-                file >> i.code;
+                file >> i.desCode;
             }
             printf("读取密码文件成功\n");
         }
