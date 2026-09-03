@@ -89,7 +89,7 @@ int main() {
 #endif
 
     clearConsole();
-    printf("Copyright (C) 2024-2026 BlazeSnow. 保留所有权利。\n");
+    printf("Copyright (C) 2024-2026 BlazeSnow.\n");
     printf("https://github.com/BlazeSnow/Custom-interchange-password\n\n");
     // first_use字符变量用于判断是否创建自定义密码文件
     char first_use = '0';
