@@ -95,7 +95,7 @@ int main() {
     char first_use = '0';
     printf("是否创建自定义密码文件?\n");
     printf("1\t创建自定义密码文件\n");
-    printf("0\t仅读取自定义密码文件\n");
+    printf("0\t读取并使用自定义密码文件\n");
     printf("请输入:\n");
     scanf(" %c", &first_use);
     // 清空菜单输入行在缓冲区中的残留
