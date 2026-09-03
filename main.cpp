@@ -158,8 +158,10 @@ int main() {
         }
         // 输入需要处理的内容
         printf("请输入需要编码或解码的内容:\n");
-        // 清空cin序列
-        scanf("%*[^\n]%*c");
+        // 清空输入缓冲区中残留的回车符
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF) {
+        }
         for (int i = 0; i < number; i++) {
             *(a + i) = (char) getchar();
             // 检测到回车时结束输入
