@@ -1,3 +1,4 @@
 # 自定义密码
 
-> 此项目已迁移至 [CppWorkspace](https://github.com/BlazeSnow/CppWorkspace/tree/main/CustomInterchangePassword)
+1. 此项目使用csv文件作为自定义密码的存放文件
+2. 密码互换方式可以通过修改csv文件进行自定义
